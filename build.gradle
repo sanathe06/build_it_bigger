@@ -21,3 +21,20 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+task appTest(dependsOn:[":backend:appengineRun",":app:connectedCheck"]){
+    evaluationDependsOn ":backend"
+
+    project(":backend"){
+        appengine{
+            daemon true;
+        }
+    }
+
+    def connectedCheck = tasks.getByPath(":app:connectedCheck")
+    def appEngineStart = tasks.getByPath(":backend:appengineRun")
+
+    connectedCheck.mustRunAfter appEngineStart
+
+    finalizedBy tasks.getByPath(":backend:appengineStop")
+}

@@ -1,8 +1,7 @@
 package com.sanath.joke;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.TextUtils;
+import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 public class JokeActivity extends AppCompatActivity {
