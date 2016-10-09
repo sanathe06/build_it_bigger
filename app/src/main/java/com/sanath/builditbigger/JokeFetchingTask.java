@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
-import android.widget.Toast;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
@@ -19,7 +18,7 @@ import java.io.IOException;
 /**
  * Created by sanathnandasiri on 10/8/16.
  */
-class JokeFetchingTask extends AsyncTask<Void, Void, String> {
+public class JokeFetchingTask extends AsyncTask<Void, Void, String> {
 
     private final String TAG = this.getClass().getSimpleName();
     private final Context context;
