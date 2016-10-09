@@ -1,47 +1,41 @@
-# Build It Bigger
+# [Build It Bigger](https://classroom.udacity.com/nanodegrees/nd801/parts/8011345408/modules/429520885375461/lessons/4295208853239847/concepts/42732622150923)
 
-##Step 0: Starting Point
-This is the starting point for the final project, which is provided to you in the course repository.
 
-It contains an activity with a banner ad and a button that purports to tell a joke, but actually just complains. The banner ad was set up following the instructions here.
+## Steps
+* Step 1: Create a Java library - *done*
 
-You may need to download the Google Repository from the Extras section of the Android SDK Manager.
+* Step 2: Create an Android Library - *done*
 
-When you can build an deploy this starter code to an emulator, you're ready to move on.
+* Step 3: Create GCE Module - *done*
 
-##Step 1: Create a Java library
-Your first task is to create a Java library that provides jokes. Create a new Gradle Java project either using the Android Studio wizard, or by hand. Then introduce a project dependency between your app and the new Java Library. If you need review, check out demo 4.01 from the course code.
+* Step 4: Add Functional Tests - *done*
 
-Make the button display a toast showing a joke retrieved from your Java joke telling library.
+* Step 5: Add a Paid Flavor - *done*
 
-##Step 2: Create an Android Library
-Create an Android Library containing an Activity that will display a joke passed to it as an intent extra. Wire up project dependencies so that the button can now pass the joke from the Java Library to the Android Library.
-
-For review on how to create an Android library, check out demo 4.03. For a refresher on intent extras, check out this documentation.
-
-##Step 3: Create GCE Module
-This next task will be pretty tricky. Instead of pulling jokes directly from our Java library, we'll set up a GCE development server, and pull our jokes from there. Follow the instructions in this tutorial to add a GCE module to your project:
-
-Introduce a project dependency between your Java library and your GCE module, and modify the GCE starter code to pull jokes from your Java library. Create an Async task to retrieve jokes. Made the button kick off a task to retrieve a joke, then launch the activity from your Android Library to display it.
-
-##Step 4: Add Functional Tests
-Add code to test that your Async task successfully retrieves a non-empty string. For a refresher on setting up Android tests, check out demo 4.09.
-
-##Step 5: Add a Paid Flavor
-Add free and paid product flavors to your app. Remove the ad (and any dependencies you can) from the paid flavor. IMPORTANT: You do not need Google AdMob in the Manifest of the paid version of the app. Make sure to include this only with the free/ manifest. Also make sure to add Google Play Services only to the free version of the app in Gradle.
-
-##Optional Tasks
+* Optional Tasks
 For extra practice to make your project stand out, complete the following tasks.
 
-##Add Interstitial Ad
-Follow these instructions to add an interstitial ad to the free version. Display the ad after the user hits the button, and before the joke is shown.
+	* Add Interstitial Ad - *done*
 
-##Add Loading Indicator
-Add a loading indicator that is shown while the joke is being retrieved, and disappears when the joke is ready. This tutorial is a good place to start.
+	* Add Loading Indicator - *done*
 
-##Configure Test Task
-To tie it all together, create a Gradle task that:
+	* Configure Test Task - *done*
 
--Launches the GCE local development server
--Runs all tests
--Shuts the server down again
+		* Launches the GCE local development server
+		* Runs all tests
+		* Shuts the server down again
+
+## Note
+* I have used sample ad unit ids for testing purposes. If somw one need real ads please replace those with your ad unit ids in free flavor string resources file.
+
+	```
+	<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+	<string name="interstitial_ad_unit_id">ca-app-pub-3940256099942544/1033173712</string>
+	```
+
+* To test configured test task please run following command in terminal 
+
+ 	```
+	./gradlew appTest
+	```
+
